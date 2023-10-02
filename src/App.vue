@@ -1,17 +1,30 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div class="container" id="app">
+      <InfoBasket />
+      <HeaderBasket />
+      <div class="content flex">
+        <ProductsList />
+        <ProductsBasket />
+      </div>
+      <InstallationOptions />
+    </div>
+    <SwiperProducts />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ProductsList from '@/components/ProductsList.vue';
+import ProductsBasket from '@/components/ProductsBasket.vue';
+import HeaderBasket from '@/components/HeaderBasket.vue';
+import InstallationOptions from '@/components/InstallationOptions.vue';
+import InfoBasket from '@/components/InfoBasket.vue';
+import SwiperProducts from '@/components/SwiperProducts.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ProductsList, ProductsBasket, HeaderBasket, InstallationOptions, InfoBasket, SwiperProducts
   }
 }
 </script>
@@ -21,8 +34,11 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.content {
+  justify-content: space-between;
 }
 </style>
